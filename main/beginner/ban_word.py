@@ -10,22 +10,21 @@ Liste principal des mots à bannir
 
 """
 
-message = input(str("Ecrivez votre message : ")).lower()
+def ban(message, ban_list):
+    message_list = message.lower().split()
 
+    for i in range(len(message_list)):
+        for banned_word in ban_list:
+            if message_list[i] == banned_word:
+                convert = len(message_list[i])
+                message_list[i] = message_list[i][0] + "*" * (convert - 1)
+
+    return " ".join(message_list)
+
+# Liste principal des mots à bannir
 ban_word = ["con", "pute"]
 
-message_list = message.split()
-compter_message = len(message_list)
-compter_interdict = len(ban_word)
+user_message = input("Ecrivez votre message : ")
+censored_message = ban(user_message, ban_word)
 
-i, j = int(0), int(0)
-
-for i in range(compter_message):
-    for j in range(compter_interdict):
-        if message_list[i] == ban_word[j]:
-            convert = int(len(message_list[i]))
-            message_list[i] = message_list[i][0] + "*" * (convert - 1)
-            j = j + 1
-    i = i + 1
-
-print(" ".join(message_list))
+print(censored_message)

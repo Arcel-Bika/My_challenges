@@ -18,4 +18,6 @@ def vowels_compter(sentence):
         print("Il y a une voyelle dans votre phrase")
     else:
         print(f"Il y a {compter} voyelles dans votre phrase")
+
+
 vowels_compter(sentence = input("Entrer une phrase: "))

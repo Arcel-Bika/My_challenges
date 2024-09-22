@@ -2,6 +2,8 @@
 Enoncé:
     Créer un compteur des voyelles
 """
+
+
 def vowels_compter(sentence):
     vowels_list = ["a", "e", "i", "o", "u"]
     sentence_list = sentence.lower().split()
